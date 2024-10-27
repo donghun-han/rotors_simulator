@@ -1,6 +1,17 @@
 RotorS
 ===============
 
+## Known Issues
+### Build
+- Failed to build rotors_hil_interface with catkin build
+  - Solution: [In file `hil_interface.h` ](https://github.com/ethz-asl/rotors_simulator/issues/737#issuecomment-2437196151) (Fixed in code)
+
+### Runtime
+- Symbol lookup error : librotors_gazebo_multirotor_base_plugin.so: undefined symbol: _ZN14gz_sensor_msgs9ActuatorsC1Ev
+  - Cause: There is a `.so` file with same name elsewhere
+  - Solution: Comment out PX4 source command in .bashrc 
+
+## Legacy
 RotorS is a MAV gazebo simulator.
 It provides some multirotor models such as the [AscTec Hummingbird](http://www.asctec.de/en/uav-uas-drone-products/asctec-hummingbird/), the [AscTec Pelican](http://www.asctec.de/en/uav-uas-drone-products/asctec-pelican/), or the [AscTec Firefly](http://www.asctec.de/en/uav-uas-drone-products/asctec-firefly/), but the simulator is not limited for the use with these multicopters.
 
