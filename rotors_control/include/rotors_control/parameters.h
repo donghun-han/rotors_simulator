@@ -1,6 +1,8 @@
 #ifndef INCLUDE_ROTORS_CONTROL_PARAMETERS_H_
 #define INCLUDE_ROTORS_CONTROL_PARAMETERS_H_
 
+#include <Eigen/Core>
+
 namespace rotors_control {
 // Default values for the Asctec Firefly rotor configuration.
 static constexpr double kDefaultRotor0Angle = 0.52359877559;
