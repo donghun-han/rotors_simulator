@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-9.0 1.5 5.5 -0 0.33 -0.35</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <light type="directional" name="sun_1">
+      <cast_shadows>false</cast_shadows>
+      <pose>8 14 50 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.8 0.8 0.8 1</specular>
+      <direction>0.5 0.1 -0.9</direction>
+    </light>
+
+
+    <!-- Spawn gate - Currently, .dae is exported with +Y as the forward direction. You need to rotate yaw by 90 degrees to align it correctly.  -->
+    <!-- Gate 1 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_1</name>
+      <pose>6.0 0 1.5 0 0 1.5708</pose>  
+    </include>
+
+    <!-- Gate 2 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_2</name>
+      <pose>12 -4 1.5 0 0 0.7854</pose>  
+    </include>
+
+    <!-- Gate 3 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_3</name>
+      <pose>13.0 -12.0 1.5 0 0 0.5236</pose>  
+    </include>
+
+    <!-- Gate 4 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_4</name>
+      <pose>16.0 -22.0 1.5 0 0 0.0</pose>  
+    </include>
+
+    <!-- Gate 5 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_5</name>
+      <pose>11.0 -28.0 1.5 0 0 -1.7453</pose>  
+    </include>
+
+    <!-- Gate 6 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_6</name>
+      <pose>6.3 -20.0 1.5 0 0 -1.5708</pose>  
+    </include>
+
+    <!-- Gate 7 top-->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_7_top</name>
+      <pose>1.0 -28.0 4.2 0 0 -0.1745</pose>  
+    </include>
+
+    <!-- Gate 7 bottom-->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_7_bottom</name>
+      <pose>1.0 -28.0 1.5 0 0 -0.1745</pose>  
+    </include>
+
+    <!-- Gate 8 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_8</name>
+      <pose>0.0 -20.0 1.5 0 0 -2.9671</pose>  
+    </include>
+
+    <!-- Gate 9 -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_9</name>
+      <pose>-2.0 -12.0 1.5 0 0 2.9671</pose>  
+    </include>
+
+    <!-- Gate 10 top -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_10_top</name>
+      <pose>0.0 -4.0 4.2 0 0 2.3562</pose>  
+    </include>
+
+    <!-- Gate 10 bottom -->
+    <include>
+      <uri>model://a2rl_gate</uri>
+      <name>gate_10_bottom</name>
+      <pose>0.0 -4.0 1.5 0 0 2.3562</pose>  
+    </include>
+
+    <!-- Only one ROS interface plugin is required per world, as any other plugin can connect a Gazebo
+         topic to a ROS topic (or vise versa). -->
+    <plugin name="ros_interface_plugin" filename="librotors_gazebo_ros_interface_plugin.so"/>
+
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>47.3667</latitude_deg>
+      <longitude_deg>8.5500</longitude_deg>
+      <elevation>500.0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <physics type='ode'>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>1000</iters>
+          <sor>1.3</sor>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.01</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>100</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+  </world>
+</sdf>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="a2rl_gate">
+    <static>true</static>
+    <link name="gate_link">
+      <visual name="gate_visual">
+        <geometry>
+          <mesh>
+            <uri>model://a2rl_gate/meshes/a2rl_gate.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://a2rl_gate/materials/textures/Frontdesign_Gate.png</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
