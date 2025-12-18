@@ -1,0 +1,12 @@
+mass:               0.752                    # [kg]
+inertia: {xx: 0.0025, xy: 0.0, xz: 0.0, yy: 0.0021, yz: 0.0, zz: 0.043}
+
+# angle should be expressed in rad
+# direction 1 means counter clockwise, -1 clockwise
+# The order of the rotors matters for the calculation of the allocation matrix.
+# FR BL FL BR
+rotor_configuration:
+  '0': {angle: -0.927, arm_length: 0.125, rotor_force_constant: 1.562522e-6, rotor_moment_constant: 2.2e-2, direction: 1.0}
+  '1': {angle: 2.214, arm_length: 0.125, rotor_force_constant: 1.562522e-6, rotor_moment_constant: 2.2e-2, direction: 1.0}
+  '2': {angle: 0.927, arm_length: 0.125, rotor_force_constant: 1.562522e-6, rotor_moment_constant: 2.2e-2, direction: -1.0}
+  '3': {angle: -2.214, arm_length: 0.125, rotor_force_constant: 1.562522e-6, rotor_moment_constant: 2.2e-2, direction: -1.0}
