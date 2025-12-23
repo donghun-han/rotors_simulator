@@ -40,6 +40,8 @@ static const std::string kDefaultCommandMultiDofJointTrajectoryTopic =
 static const std::string kDefaultCommandRollPitchYawrateThrustTopic =
     mav_msgs::default_topics::COMMAND_ROLL_PITCH_YAWRATE_THRUST;
     // "command/roll_pitch_yawrate_thrust"
+static const std::string kDefaultCommandRateThrustTopic =
+    mav_msgs::default_topics::COMMAND_RATE_THRUST; // "command/rate_thrust"
 static const std::string kDefaultImuTopic =
     mav_msgs::default_topics::IMU; // "imu
 static const std::string kDefaultOdometryTopic =
